@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular-Instagram</title>
+</head>
+<body ng-app='myApp'>
+  <h1>Instagram Feed </h1>
+  <div ng-controller= "myController">
+  <ul class='pictures'>
+        <div class='picture' ng-repeat='picture in pictures.data'>
+          <img ng-src="{{ picture.images.standard_resolution.url }}"></img>
+          <p>{{picture.caption.text}}</p>
+          <p>{{picture.caption.likes.count}}</p>
+          <p>{{picture.caption.tags}}</p>
+          </div>
+      </ul>
+    </div>
+
+  <script src ='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+  <script src='js/myApp.js'></script>
+  <script src='js/providers.js'></script>
+  <script src='js/controllers.js'></script>
+  <script src='js/services.js'></script>
+</body>
+</html>
